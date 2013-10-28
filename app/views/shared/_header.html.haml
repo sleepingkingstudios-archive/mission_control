@@ -1,0 +1,18 @@
+.fixed
+  %nav.top-bar
+    %ul.title-area
+      %li.name
+        %h1= link_to 'Mission Control', root_path
+      %li.toggle-topbar.menu-icon
+        = link_to '#' do
+          %span Menu
+
+    %section.top-bar-section
+      %ul.right
+        %li.divider
+        - if current_user
+          %li= link_to 'User Profile', edit_user_registration_path
+          %li= link_to 'Sign Out', destroy_user_session_path, :method => :delete
+        - else
+          %li= link_to 'Register', new_user_registration_path
+          %li= link_to 'Sign In', new_user_session_path

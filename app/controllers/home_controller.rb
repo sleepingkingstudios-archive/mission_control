@@ -1,2 +1,5 @@
+# app/controllers/home_controller.rb
+
 class HomeController < ApplicationController
-end
+  def index; end
+end # controller

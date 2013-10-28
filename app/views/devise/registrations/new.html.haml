@@ -1,0 +1,21 @@
+%h2 Register
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  %fieldset
+    %legend Create Profile
+    
+    = devise_error_messages!
+    
+    = f.label :email, 'Email Address'
+    = f.email_field :email, :autofocus => true, :placeholder => 'me@example.com'
+
+    .row
+      .large-6.columns
+        = f.label :password, 'Password'
+        = f.password_field :password
+      .large-6.columns
+        = f.label :password_confirmation, 'Confirm Password'
+        = f.password_field :password_confirmation
+
+    = f.submit "Create Profile", :class => 'button'
+
+= render "devise/shared/links"

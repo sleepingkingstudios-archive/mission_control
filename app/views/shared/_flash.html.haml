@@ -1,0 +1,9 @@
+-# app/views/shared/_flash.html.haml
+
+- unless flash.blank?
+  .row
+    .large-12.columns
+      - flash.each do |type, message|
+        %div{ :class => "alert-box #{type}", data: { :alert => true } }
+          = message
+          = link_to '&times;'.html_safe, '#', :class => 'close'
