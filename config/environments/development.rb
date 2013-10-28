@@ -1,3 +1,5 @@
+# config/development.rb
+
 MissionControl::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -26,4 +28,9 @@ MissionControl::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-end
+
+  # Set directory for generated factories.
+  config.generators do |generators|
+    generators.factory_girl dir: 'spec/support/factories'
+  end # generators
+end # configure
