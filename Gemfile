@@ -12,13 +12,14 @@ gem 'sqlite3', '~> 1.3.8'
 gem 'devise',  '~> 3.1.1'
 
 ### Assets ###
-gem 'haml-rails',      '~> 0.4'
-gem 'sass-rails',      '~> 4.0.0'
-gem 'coffee-rails',    '~> 4.0.0'
-gem 'jquery-rails',    '~> 3.0.4'
-gem 'uglifier',        '>= 1.3.0' # Compressor for JavaScript assets
-gem 'compass-rails',   '~> 2.0.alpha.0'
-gem 'zurb-foundation', '~> 4.0.0'
+gem 'haml-rails',        '~> 0.4'
+gem 'sass-rails',        '~> 4.0.0'
+gem 'coffee-rails',      '~> 4.0.0'
+gem 'jquery-rails',      '~> 3.0.4'
+gem 'uglifier',          '>= 1.3.0' # Compressor for JavaScript assets
+gem 'compass-rails',     '~> 2.0.alpha.0'
+gem 'zurb-foundation',   '~> 4.0.0'
+gem 'backbone-on-rails', '~> 1.1.0'
 
 ### Support ###
 # gem 'debugger', group: [:development, :test]

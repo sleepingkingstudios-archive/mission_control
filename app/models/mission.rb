@@ -1,6 +1,13 @@
 # app/models/mission.rb
 
 class Mission < ActiveRecord::Base
+  ### Fields ###
+  # user_id:integer
+  # name:string
+  # status:string
+  # created_at:datetime
+  # updated_at:datetime
+
   def self.status
     [ 'cancelled',
       'failure',

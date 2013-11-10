@@ -12,7 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//
+// We're using Foundation for our presentation framework.
+//
 //= require foundation
-//= require_tree .
+//
+// To handle our RESTful API, we're using Backbone.js.
+//
+//= require underscore
+//= require backbone
+//= require mission_control
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
 
 $(document).foundation();

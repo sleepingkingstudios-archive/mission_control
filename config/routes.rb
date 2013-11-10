@@ -6,6 +6,8 @@ MissionControl::Application.routes.draw do
 
   devise_for :users
 
+  resources :missions, :only => %i(index)
+
   root :to => 'home#index'
 
   # Example of regular route:
