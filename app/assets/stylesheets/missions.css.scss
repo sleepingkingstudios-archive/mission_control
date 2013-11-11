@@ -2,8 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$mission-cancelled-color:   $orange;
+$mission-failure-color:     $red;
+$mission-in-progress-color: $yellow;
+$mission-planned-color:     $blue;
+$mission-success-color:     $green;
+
 #missions {
   table {
     width: 100%;
+
+    tr {
+      @include grid-row(nest);
+
+      th, td {
+        &.name {
+          @include grid-column(2);
+        }
+        &.status {
+          @include grid-column(2);
+
+          /* Custom colors for the mission */
+          &.cancelled   { color: $mission-cancelled-color; }
+          &.failure     { color: $mission-failure-color; }
+          &.in-progress { color: $mission-in-progress-color; }
+          &.planned     { color: $mission-planned-color; }
+          &.success     { color: $mission-success-color; }
+        }
+      }
+    }
   }
 }

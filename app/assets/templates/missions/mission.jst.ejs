@@ -1,3 +1,3 @@
 <!-- app/assets/templates/missions/mission.jst.ejs -->
-<td><%= mission.escape('name') %></td>
-<td><%= mission.escape('status_message') %></td>
+<td class="name"><%= mission.escape('name') %></td>
+<td class="status <%= mission.escape('status').replace('_','-') %>"><%= mission.escape('status_message') %></td>

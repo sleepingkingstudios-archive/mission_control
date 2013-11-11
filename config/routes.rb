@@ -8,6 +8,9 @@ MissionControl::Application.routes.draw do
 
   resources :missions, :only => %i(index create)
 
+  # Creates the user_root_path helper for Devise.
+  get 'missions' => 'missions#index', :as => :user_root
+
   root :to => 'home#index'
 
   # Example of regular route:
