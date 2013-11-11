@@ -3,7 +3,6 @@ window.MissionControl =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
-
-$(document).ready ->
-  MissionControl.initialize()
+  initialize: () ->
+    console.log 'Hello from Backbone!'
+    Backbone.history.start()

@@ -6,7 +6,7 @@ MissionControl::Application.routes.draw do
 
   devise_for :users
 
-  resources :missions, :only => %i(index)
+  resources :missions, :only => %i(index create)
 
   root :to => 'home#index'
 

@@ -1,8 +1,0 @@
--# app/views/shared/header/_profile.html.haml
-
-%p
-  You are currently logged in as
-  = succeed '.' do
-    = current_user.email
-  = succeed '.' do
-    = link_to 'Sign Out', destroy_user_session_path, :method => :delete

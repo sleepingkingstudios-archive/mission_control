@@ -11,7 +11,7 @@ class Mission < ActiveRecord::Base
   def self.status
     [ 'cancelled',
       'failure',
-      'in progress',
+      'in_progress',
       'planned',
       'success'
     ] # end array
@@ -37,4 +37,16 @@ class Mission < ActiveRecord::Base
       self.status == status
     end # method
   end # each
+
+  def status_message
+    status.titleize
+  end # method status_message
+
+  ### Serialization ###
+
+  def as_json options = {}
+    # Include nested models:
+    #   :include => %i(comments)
+    super options.merge(:only => %i(id name status), :methods => :status_message)
+  end # method as_json
 end # model

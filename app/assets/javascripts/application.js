@@ -27,5 +27,7 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-
-$(document).foundation();
+ 
+$(document).ready(function(){
+  $(document).foundation();
+}); // end ready

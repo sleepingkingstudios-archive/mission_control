@@ -9,7 +9,7 @@ RSpec.describe Mission do
 
     specify { expect(described_class.status).to include 'planned' }
     specify { expect(described_class.status).to include 'cancelled' }
-    specify { expect(described_class.status).to include 'in progress' }
+    specify { expect(described_class.status).to include 'in_progress' }
     specify { expect(described_class.status).to include 'success' }
     specify { expect(described_class.status).to include 'failure' }
   end # describe
@@ -17,6 +17,10 @@ RSpec.describe Mission do
   let(:user)       { FactoryGirl.build_stubbed :user }
   let(:attributes) { { :user => user } }
   let(:instance)   { FactoryGirl.build :mission, attributes }
+
+  #################
+  ### Relations ###
+  #################
 
   describe '#user' do
     specify { expect(instance).to respond_to(:user).with(0).arguments }
@@ -37,6 +41,10 @@ RSpec.describe Mission do
     end # specify
   end # describe
 
+  ##############
+  ### Fields ###
+  ##############
+
   describe '#name' do
     specify { expect(instance).to have_property(:name) }
   end # describe
@@ -48,6 +56,10 @@ RSpec.describe Mission do
       expect(instance.status).to be == 'planned'
     end # specify
   end # describe
+
+  ########################
+  ### Instance Methods ###
+  ########################
 
   describe '#cancelled?' do
     specify { expect(instance).to respond_to(:cancelled?).with(0).arguments }
@@ -71,7 +83,7 @@ RSpec.describe Mission do
     specify { expect(instance).to respond_to(:in_progress?).with(0).arguments }
     specify 'checks the status' do
       expect {
-        instance.status = 'in progress'
+        instance.status = 'in_progress'
       }.to change(instance, :in_progress?).from(false).to(true)
     end # specify
   end # describe
@@ -95,6 +107,38 @@ RSpec.describe Mission do
       }.to change(instance, :success?).from(false).to(true)
     end # specify
   end # describe
+
+  describe '#status_message' do
+    specify { expect(instance).to respond_to(:status_message).with(0).arguments }
+
+    specify 'returns human-readable status' do
+      expect(instance.status_message).to be == "Planned"
+
+      expect {
+        instance.status = "in_progress"
+      }.to change(instance, :status_message).to "In Progress"
+    end # specify
+  end # describe
+
+  ### Serialization ###
+
+  describe '#as_json' do
+    specify { expect(instance).to respond_to(:as_json).with(0..1).arguments }
+
+    let(:data) { instance.as_json }
+
+    specify 'returns a hash' do
+      expect(data).to be_a Hash
+    end # specify
+
+    specify 'whitelists keys' do
+      expect(Set.new data.keys).to be == Set.new(%w(id name status status_message))
+    end # specify
+  end # describe
+
+  ##################
+  ### Validation ###
+  ##################
 
   describe 'validation' do
     specify { expect(instance).to be_valid }

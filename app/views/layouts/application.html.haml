@@ -15,7 +15,12 @@
   %title= content_for?(:title) ? yield(:title) : 'Mission Control'
 
   = stylesheet_link_tag    'application'
+  = yield :stylesheets
+
   = javascript_include_tag 'vendor/custom.modernizr'
+  = javascript_include_tag 'application'
+  = yield :javascripts
+
   = csrf_meta_tag
 
 %body
@@ -24,7 +29,5 @@
   = render :partial => 'shared/flash'
 
   .row
-    .large-12.columns
+    #page-contents.large-12.columns
       = yield
-
-  = javascript_include_tag 'application'

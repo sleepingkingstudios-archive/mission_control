@@ -11,6 +11,7 @@
       %ul.right
         %li.divider
         - if current_user
+          %li= link_to 'Missions', missions_path
           %li= link_to 'User Profile', edit_user_registration_path
           %li= link_to 'Sign Out', destroy_user_session_path, :method => :delete
         - else
