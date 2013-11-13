@@ -1,0 +1,4 @@
+# spec/javascripts/support/jasmine.yml
+
+spec_files:
+  - "**/*[Ss]pec.{js,coffee,js.coffee}"

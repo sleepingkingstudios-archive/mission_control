@@ -38,5 +38,8 @@ group :test do
   gem 'fuubar',                      '~> 1.2.1'
   gem 'factory_girl_rails',          '~> 4.2.0'
   gem 'database_cleaner',            '~> 1.2.0'
+
+  gem 'jasmine-rails',               '~> 0.4.9'
+
   gem 'pry',                         '~> 0.9.12'
 end # group
