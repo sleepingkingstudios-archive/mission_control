@@ -4,6 +4,18 @@
 
 To be added.
 
+== Testing
+
+=== JavaScript
+
+Mission Control uses Jasmine to perform tests on JavaScript components.
+
+==== Command-Line
+
+To run the Jasmine test suite via the command line, enter:
+
+    RAILS_ENV=test bundle exec rake spec:javascript
+
 == Attributions
 
 The default theme uses the Solarized color scheme by Ethan Schoonover. The main
