@@ -12,8 +12,7 @@ describe 'SleepingKingStudios.utils.object', ->
 
   describe '#inspect', ->
     it 'is a function', ->
-      # expect(Ω.obj).toRespondTo 'inspect'
-      expect(typeof(Ω.obj.inspect)).toEqual('function')
+      expect(Ω.obj).toRespondTo 'inspect'
 
     describe 'shorthand', ->
       it 'is the function', ->
@@ -172,8 +171,7 @@ describe 'SleepingKingStudios.utils.object', ->
 
   describe '#isDataObject', ->
     it 'is a function', ->
-      # expect(Ω.obj).toRespondTo 'inspect'
-      expect(typeof(Ω.obj.isDataObject)).toEqual('function')
+      expect(Ω.obj).toRespondTo 'inspect'
 
     describe 'with undefined', ->
       it 'returns false', ->

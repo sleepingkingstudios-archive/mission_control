@@ -12,8 +12,7 @@ describe 'SleepingKingStudios.utils.function', ->
 
   describe '#extractOptions', ->
     it 'is a function', ->
-      # expect(Ω.fn).toRespondTo 'extractOptions'
-      expect(typeof(Ω.fn.extractOptions)).toEqual('function')
+      expect(Ω.fn).toRespondTo 'extractOptions'
 
     describe 'with an empty array', ->
       ary = []

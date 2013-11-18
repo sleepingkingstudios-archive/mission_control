@@ -12,8 +12,7 @@ describe 'SleepingKingStudios.utils.string', ->
 
   describe '#indent', ->
     it 'is a function', ->
-      # expect(Ω.str).toRespondTo 'indent'
-      expect(typeof(Ω.str.indent)).toEqual('function')
+      expect(Ω.str).toRespondTo 'indent'
 
     describe 'with a single-line string', ->
       str = "I want to be the very best, like no one ever was!"
@@ -98,8 +97,7 @@ describe 'SleepingKingStudios.utils.string', ->
 
   describe '#lines', ->
     it 'is a function', ->
-      # expect(Ω.string).toRespondTo 'lines'
-      expect(typeof(Ω.str.lines)).toEqual('function')
+      expect(Ω.string).toRespondTo 'lines'
 
     describe 'with a single-line string', ->
       str = "I want to be the very best, like no one ever was!"
