@@ -17,7 +17,7 @@ gem 'sass-rails',        '~> 4.0.0'
 gem 'coffee-rails',      '~> 4.0.0'
 gem 'jquery-rails',      '~> 3.0.4'
 gem 'uglifier',          '>= 1.3.0' # Compressor for JavaScript assets
-gem 'compass-rails',     '~> 2.0.alpha.0'
+gem 'compass-rails',     '~> 1.1.2'
 gem 'zurb-foundation',   '~> 4.0.0'
 gem 'backbone-on-rails', '~> 1.1.0'
 

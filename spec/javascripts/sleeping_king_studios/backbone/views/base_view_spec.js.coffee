@@ -12,32 +12,31 @@ describe 'SleepingKingStudios.Backbone.Views.BaseView', ->
     # No way to distinguish Function from Class?
     expect(describedClass).toBeAFunction()
 
-  describe 'instance', ->
+  describe '#finalize', ->
     instance = new describedClass
 
-    it 'responds to #finalize', ->
+    it 'is a function', ->
       expect(instance).toRespondTo 'finalize'
 
-    it 'invokes #finalize on #remove()', ->
+    it 'is invoked on #remove()', ->
       spyOn instance, 'finalize'
       instance.remove()
       expect(instance.finalize).toHaveBeenCalled()
 
   describe 'a subclass', ->
     subClass = class extends describedClass
-      customMethod: ->
-        # Do nothing here.
+      customMethod: -> # Do nothing here.
 
       finalize: ->
         @customMethod()
 
-    describe 'instance', ->
+    describe '#finalize', ->
       instance = new subClass
 
-      it 'responds to #finalize', ->
+      it 'is a function', ->
         expect(instance).toRespondTo 'finalize'
 
-      it 'invokes #finalize on #remove()', ->
-        spyOn(instance, 'customMethod')
+      it 'is invoked on #remove()', ->
+        spyOn instance, 'customMethod'
         instance.remove()
         expect(instance.customMethod).toHaveBeenCalled()
